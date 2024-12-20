@@ -1,0 +1,20 @@
+<Project Sdk="MSTest.Sdk/3.6.1">
+
+  <PropertyGroup>
+    <TargetFramework>net48;net481;net8.0;net9.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UseVSTest>true</UseVSTest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Snapshooter" Version="0.14.1" />
+    <PackageReference Include="Snapshooter.MSTest" Version="0.14.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppDomainWrapper\AppDomainWrapper\AppDomainWrapper.csproj" />
+  </ItemGroup>
+
+</Project>
