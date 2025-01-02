@@ -9,11 +9,11 @@
     <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)\..\release-notes.txt"))</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>
-      This package contains an abstraction of the static System.Windows.MessageBox class found in .NET Framework 4.8 and .NET 8.0. It allows for an IMessageBox interface to be used instead for easier testing.
+      This package contains an abstraction of the static System.AppDomain class found in .NET Framework 4.8 and above. It allows for an IAppDominFactory interface to be used instead of the static class and for mocks to be created.
     </Description>
-    <PackageProjectUrl>https://github.com/Agilent/Agilent.Testables.AppDomainWrapper</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Agilent/Agilent.Testables.AppDomain</PackageProjectUrl>
     <PackageIcon>icon.png</PackageIcon>
-    <RepositoryUrl>https://github.com/Agilent/Agilent.Testables.AppDomainWrapper</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Agilent/Agilent.Testables.AppDomain</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>appdomain, iappdomain, testing, ioc, dependency injection, agilent</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
