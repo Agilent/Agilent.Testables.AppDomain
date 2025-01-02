@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <OutputType>Library</OutputType>
     <RootNamespace>Agilent.Testables.AppDomain</RootNamespace>
     <AssemblyName>Agilent.Testables.AppDomain</AssemblyName>
