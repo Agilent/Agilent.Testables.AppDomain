@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Agilent.Testables.AppDomain</RootNamespace>
+    <AssemblyName>Agilent.Testables.AppDomain</AssemblyName>
+    <Authors>Agilent</Authors>
+    <PackageReleaseNotes>$([System.IO.File]::ReadAllText("$(MSBuildProjectDirectory)\..\release-notes.txt"))</PackageReleaseNotes>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>
+      This package contains an abstraction of the static System.Windows.MessageBox class found in .NET Framework 4.8 and .NET 8.0. It allows for an IMessageBox interface to be used instead for easier testing.
+    </Description>
+    <PackageProjectUrl>https://github.com/Agilent/Agilent.Testables.AppDomainWrapper</PackageProjectUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryUrl>https://github.com/Agilent/Agilent.Testables.AppDomainWrapper</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>appdomain, iappdomain, testing, ioc, dependency injection, agilent</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath=""/>
+    <None Include="..\images\icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>net48;net481;net8.0;net9.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net48'">
+    <DefineConstants>NET48</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net481'">
+    <DefineConstants>NET481</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0'">
+    <DefineConstants>NET8_0</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net9.0'">
+    <DefineConstants>NET9_0</DefineConstants>
+  </PropertyGroup>
+
+</Project>

@@ -1,4 +1,6 @@
-﻿namespace AppDomainWrapper;
+﻿using Agilent.Testables.AppDomain.Abstractions;
+
+namespace Agilent.Testables.AppDomain.Wrappers;
 
 public class AppDomainFactory : IAppDomainFactory
 {

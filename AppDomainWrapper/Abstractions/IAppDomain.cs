@@ -1,4 +1,4 @@
-﻿namespace AppDomainWrapper;
+﻿namespace Agilent.Testables.AppDomain.Abstractions;
 
 public interface IAppDomain
 {
@@ -37,7 +37,7 @@ public interface IAppDomain
 
     /// <inheritdoc cref="System.AppDomain.PermissionSet"/>
 #if NET8_0_OR_GREATER
-    [System.Obsolete("Code Access Security is not supported or honored by the runtime.", DiagnosticId = "SYSLIB0003", UrlFormat = "https://aka.ms/dotnet-warnings/{0}")]
+    [Obsolete("Code Access Security is not supported or honored by the runtime.", DiagnosticId = "SYSLIB0003", UrlFormat = "https://aka.ms/dotnet-warnings/{0}")]
 #endif
     System.Security.PermissionSet PermissionSet { get; }
 
@@ -51,18 +51,18 @@ public interface IAppDomain
     bool ShadowCopyFiles { get; }
 
     /// <inheritdoc cref="System.AppDomain.AppendPrivatePath(string)"/>
-    [System.Obsolete("AppDomain.AppendPrivatePath has been deprecated and is not supported.")]
+    [Obsolete("AppDomain.AppendPrivatePath has been deprecated and is not supported.")]
     void AppendPrivatePath(string? path);
 
     /// <inheritdoc cref="System.AppDomain.ApplyPolicy(string)"/>
     string ApplyPolicy(string assemblyName);
 
     /// <inheritdoc cref="System.AppDomain.ClearPrivatePath"/>
-    [System.Obsolete("AppDomain.ClearPrivatePath has been deprecated and is not supported.")]
+    [Obsolete("AppDomain.ClearPrivatePath has been deprecated and is not supported.")]
     void ClearPrivatePath();
 
     /// <inheritdoc cref="System.AppDomain.ClearShadowCopyPath"/>
-    [System.Obsolete("AppDomain.ClearShadowCopyPath has been deprecated and is not supported.")]
+    [Obsolete("AppDomain.ClearShadowCopyPath has been deprecated and is not supported.")]
     void ClearShadowCopyPath();
 
     /// <inheritdoc cref="System.AppDomain.CreateInstance(string, string)"/>
@@ -103,7 +103,7 @@ public interface IAppDomain
     object? CreateInstanceFromAndUnwrap(string assemblyFile, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder? binder, object?[]? args, System.Globalization.CultureInfo? culture, object?[]? activationAttributes);
 
 #if NET8_0_OR_GREATER
-    [System.Obsolete("Code Access Security is not supported or honored by the runtime.", DiagnosticId = "SYSLIB0003", UrlFormat = "https://aka.ms/dotnet-warnings/{0}")]
+    [Obsolete("Code Access Security is not supported or honored by the runtime.", DiagnosticId = "SYSLIB0003", UrlFormat = "https://aka.ms/dotnet-warnings/{0}")]
 #endif
     /// <inheritdoc cref="System.AppDomain.ExecuteAssembly(string, string?[], byte[]?, System.Configuration.Assemblies.AssemblyHashAlgorithm)"/>
     int ExecuteAssembly(string assemblyFile, string?[]? args, byte[]? hashValue, System.Configuration.Assemblies.AssemblyHashAlgorithm hashAlgorithm);
@@ -127,7 +127,7 @@ public interface IAppDomain
     System.Reflection.Assembly[] GetAssemblies();
 
     /// <inheritdoc cref="System.AppDomain.GetCurrentThreadId"/>
-    [System.Obsolete("AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread instead.")]
+    [Obsolete("AppDomain.GetCurrentThreadId has been deprecated because it does not provide a stable Id when managed threads are running on fibers (aka lightweight threads). To get a stable identifier for a managed thread, use the ManagedThreadId property on Thread instead.")]
     int GetCurrentThreadId();
 
     /// <inheritdoc cref="System.AppDomain.GetData(string)"/>
@@ -159,7 +159,7 @@ public interface IAppDomain
     System.Reflection.Assembly[] ReflectionOnlyGetAssemblies();
 
     /// <inheritdoc cref="System.AppDomain.SetCachePath(string)"/>
-    [System.Obsolete("AppDomain.SetCachePath has been deprecated and is not supported.")]
+    [Obsolete("AppDomain.SetCachePath has been deprecated and is not supported.")]
     public void SetCachePath(string? path);
 
 
@@ -167,18 +167,18 @@ public interface IAppDomain
     void SetData(string name, object? data);
 
     /// <inheritdoc cref="System.AppDomain.SetDynamicBase(string)"/>
-    [System.Obsolete("AppDomain.SetDynamicBase has been deprecated and is not supported.")]
+    [Obsolete("AppDomain.SetDynamicBase has been deprecated and is not supported.")]
     void SetDynamicBase(string? path);
 
     /// <inheritdoc cref="System.AppDomain.SetPrincipalPolicy(System.Security.Principal.PrincipalPolicy)"/>
     void SetPrincipalPolicy(System.Security.Principal.PrincipalPolicy policy);
 
     /// <inheritdoc cref="System.AppDomain.SetShadowCopyFiles"/>
-    [System.Obsolete("AppDomain.SetShadowCopyFiles has been deprecated and is not supported.")]
+    [Obsolete("AppDomain.SetShadowCopyFiles has been deprecated and is not supported.")]
     void SetShadowCopyFiles();
 
     /// <inheritdoc cref="System.AppDomain.SetShadowCopyPath(string)"/>
-    [System.Obsolete("AppDomain.SetShadowCopyPath has been deprecated and is not supported.")]
+    [Obsolete("AppDomain.SetShadowCopyPath has been deprecated and is not supported.")]
     void SetShadowCopyPath(string? path);
 
     /// <inheritdoc cref="System.AppDomain.SetThreadPrincipal(System.Security.Principal.IPrincipal)"/>
@@ -189,7 +189,7 @@ public interface IAppDomain
 
     /// <inheritdoc cref="System.AppDomain.Unload(System.AppDomain)"/>
 #if NET8_0_OR_GREATER
-    [System.Obsolete("Creating and unloading AppDomains is not supported and throws an exception.", DiagnosticId = "SYSLIB0024", UrlFormat = "https://aka.ms/dotnet-warnings/{0}")]
+    [Obsolete("Creating and unloading AppDomains is not supported and throws an exception.", DiagnosticId = "SYSLIB0024", UrlFormat = "https://aka.ms/dotnet-warnings/{0}")]
 #endif
     void Unload(System.AppDomain domain);
 

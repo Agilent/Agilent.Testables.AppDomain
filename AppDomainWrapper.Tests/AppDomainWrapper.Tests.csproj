@@ -33,11 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AppDomainWrapper\AppDomainWrapper\AppDomainWrapper.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="__snapshots__\" />
+    <ProjectReference Include="..\AppDomainWrapper\AppDomainWrapper.csproj" />
   </ItemGroup>
 
 </Project>

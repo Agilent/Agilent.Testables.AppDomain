@@ -2,6 +2,7 @@
 using Snapshooter;
 using Snapshooter.MSTest;
 using static System.Reflection.BindingFlags;
+using AppDomain = Agilent.Testables.AppDomain.Wrappers.AppDomain;
 
 namespace AppDomainWrapper.Tests;
 [TestClass]
@@ -11,7 +12,7 @@ public class ApiParityTests
 
 
     [TestMethod]
-    public void MessageBox()
+    public void AppDomain_Should_ProvideApiParity()
     {
         AssertParity(
             referenceType: typeof(System.AppDomain),
