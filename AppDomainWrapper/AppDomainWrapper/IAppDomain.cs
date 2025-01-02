@@ -36,7 +36,9 @@ public interface IAppDomain
     TimeSpan MonitoringTotalProcessorTime { get; }
 
     /// <inheritdoc cref="System.AppDomain.PermissionSet"/>
+#if NET8_0_OR_GREATER
     [System.Obsolete("Code Access Security is not supported or honored by the runtime.", DiagnosticId = "SYSLIB0003", UrlFormat = "https://aka.ms/dotnet-warnings/{0}")]
+#endif
     System.Security.PermissionSet PermissionSet { get; }
 
     /// <inheritdoc cref="System.AppDomain.RelativeSearchPath"/>
@@ -85,7 +87,6 @@ public interface IAppDomain
     /// <inheritdoc cref="System.AppDomain.CreateInstanceFrom(string, string, bool, System.Reflection.BindingFlags, System.Reflection.Binder?, object?[], System.Globalization.CultureInfo?, object?[])"/>
     System.Runtime.Remoting.ObjectHandle? CreateInstanceFrom(string assemblyFile, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder? binder, object?[]? args, System.Globalization.CultureInfo? culture, object?[]? activationAttributes);
 
-
     /// <inheritdoc cref="System.AppDomain.CreateInstanceFrom(string, string, object?[])"/>
     System.Runtime.Remoting.ObjectHandle? CreateInstanceFrom(string assemblyFile, string typeName, object?[]? activationAttributes);
 
@@ -101,9 +102,10 @@ public interface IAppDomain
     /// <inheritdoc cref="System.AppDomain.CreateInstanceFromAndUnwrap(string, string, bool, System.Reflection.BindingFlags, System.Reflection.Binder?, object?[], System.Globalization.CultureInfo?, object?[])"/>
     object? CreateInstanceFromAndUnwrap(string assemblyFile, string typeName, bool ignoreCase, System.Reflection.BindingFlags bindingAttr, System.Reflection.Binder? binder, object?[]? args, System.Globalization.CultureInfo? culture, object?[]? activationAttributes);
 
-
-    /// <inheritdoc cref="System.AppDomain.ExecuteAssembly(string, string?[], byte[]?, System.Configuration.Assemblies.AssemblyHashAlgorithm)"/>
+#if NET8_0_OR_GREATER
     [System.Obsolete("Code Access Security is not supported or honored by the runtime.", DiagnosticId = "SYSLIB0003", UrlFormat = "https://aka.ms/dotnet-warnings/{0}")]
+#endif
+    /// <inheritdoc cref="System.AppDomain.ExecuteAssembly(string, string?[], byte[]?, System.Configuration.Assemblies.AssemblyHashAlgorithm)"/>
     int ExecuteAssembly(string assemblyFile, string?[]? args, byte[]? hashValue, System.Configuration.Assemblies.AssemblyHashAlgorithm hashAlgorithm);
 
     /// <inheritdoc cref="System.AppDomain.ExecuteAssembly(string, string?[])"/>
@@ -185,8 +187,10 @@ public interface IAppDomain
     /// <inheritdoc cref="System.AppDomain.ToString"/>
     string ToString();
 
-    /// <inheritdoc cref="System.AppDomain.Unload(AppDomain)"/>
+    /// <inheritdoc cref="System.AppDomain.Unload(System.AppDomain)"/>
+#if NET8_0_OR_GREATER
     [System.Obsolete("Creating and unloading AppDomains is not supported and throws an exception.", DiagnosticId = "SYSLIB0024", UrlFormat = "https://aka.ms/dotnet-warnings/{0}")]
+#endif
     void Unload(System.AppDomain domain);
 
     /// <inheritdoc cref="System.AppDomain.AssemblyLoad"/>
@@ -215,5 +219,4 @@ public interface IAppDomain
 
     /// <inheritdoc cref="System.AppDomain.UnhandledException"/>
     event UnhandledExceptionEventHandler? UnhandledException;
-
 }

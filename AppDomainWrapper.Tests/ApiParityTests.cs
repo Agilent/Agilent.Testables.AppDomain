@@ -41,7 +41,8 @@ public class ApiParityTests
 
 #if NET48
         private const string SnapshotSuffix = ".NET Framework 4.8";
-
+#elif NET481
+        private const string SnapshotSuffix = ".NET Framework 4.8.1";
 #elif NET8_0
         private const string SnapshotSuffix = ".NET 8.0";
 #elif NET9_0

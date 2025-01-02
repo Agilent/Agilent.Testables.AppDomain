@@ -4,6 +4,23 @@
     <TargetFrameworks>net48;net481;net8.0;net9.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net48'">
+    <DefineConstants>NET48</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net481'">
+    <DefineConstants>NET481</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0'">
+    <DefineConstants>NET8_0</DefineConstants>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net9.0'">
+    <DefineConstants>NET9_0</DefineConstants>
   </PropertyGroup>
 
 </Project>

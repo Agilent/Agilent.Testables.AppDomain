@@ -1,0 +1,12 @@
+﻿{
+  "ExtraMembers": [
+    "Void .ctor(System.AppDomain)"
+  ],
+  "MissingMembers": [
+    "System.AppDomain CreateDomain(System.String)",
+    "System.AppDomain CurrentDomain",
+    "System.AppDomain get_CurrentDomain()",
+    "System.Object GetLifetimeService()",
+    "System.Object InitializeLifetimeService()"
+  ]
+}

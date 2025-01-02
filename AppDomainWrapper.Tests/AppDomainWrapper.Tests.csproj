@@ -1,11 +1,30 @@
-<Project Sdk="MSTest.Sdk/3.6.1">
+﻿<Project Sdk="MSTest.Sdk/3.6.1">
 
   <PropertyGroup>
-    <TargetFramework>net48;net481;net8.0;net9.0</TargetFramework>
+    <TargetFrameworks>net48;net481;net8.0;net9.0</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <UseVSTest>true</UseVSTest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net48'">
+    <DefineConstants>NET48</DefineConstants>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net481'">
+    <DefineConstants>NET481</DefineConstants>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0'">
+    <DefineConstants>NET8_0</DefineConstants>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net9.0'">
+    <DefineConstants>NET9_0</DefineConstants>
+    <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +34,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AppDomainWrapper\AppDomainWrapper\AppDomainWrapper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="__snapshots__\" />
   </ItemGroup>
 
 </Project>
